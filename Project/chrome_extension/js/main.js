@@ -22,7 +22,7 @@ function randomize(arr) {
 }
 
 
-document.addEventListener('click', backgroundHandler);
+// document.addEventListener('click', backgroundHandler);
 
 
 // Browser Clock
