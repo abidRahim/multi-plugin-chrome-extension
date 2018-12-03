@@ -21,7 +21,6 @@ function randomize(arr) {
   }
 }
 
-
 document.addEventListener('click', backgroundHandler);
 
 
@@ -78,3 +77,6 @@ function quoteGenerator() {
 
 quoteGenerator();
 setInterval(quoteGenerator, 8000);
+
+// ToDo List
+

@@ -5,6 +5,10 @@
   --change: url('../img/1.jpg');
 }
 
+body {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
 .back {
   background-image: var(--change);
   background-size: cover;
@@ -90,3 +94,13 @@
   align-self: end;
   margin: 0 0 40px 40px;
 }
+
+blockquote {
+  border-left: 4px solid white;
+  padding-left: 15px;
+}
+
+cite {
+  margin-left: 40px;
+}
+
