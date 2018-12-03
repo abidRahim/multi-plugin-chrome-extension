@@ -66,4 +66,15 @@ var second = document.querySelector(".second");
     setInterval( minStick , 60000);
     setInterval( hourStick, 3600000);
 
-    
+// Quote Generator
+
+var quoting = document.querySelector('.quote-generator');
+
+function quoteGenerator() {
+  var num = Math.floor(Math.random() * quotes.length);
+
+  quoting.innerHTML = `<blockquote>"${quotes[num].quote}"</blockquote> <cite>${quotes[num].author}</cite>`;
+}
+
+quoteGenerator();
+setInterval(quoteGenerator, 8000);
