@@ -1,0 +1,82 @@
+/* Importing Normalize css */
+@import url("normalize.css");
+
+:root {
+  --change: url('../img/1.jpg');
+}
+
+.back {
+  background-image: var(--change);
+  background-size: cover;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+/* Browser Clock */
+
+.item1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  grid-template-areas: 
+    "clock other"
+    "another other";  
+  place-items: center;
+}
+
+.clock {
+  grid-area: "clock";
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 10px solid rgb(209, 209, 209);
+  position: relative;     
+}
+
+.center {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hour {
+  height: 40px;
+  width: 4px;
+  background-color: black;
+  position: absolute;
+  left: 49.5%;
+  top: 23%;
+  transform-origin: 50% 100%;
+  /* transform: rotate( calc( var(--rotateTo) * 1deg) ); */
+}
+
+.minute {
+  height: 55px;
+  width: 4px;
+  background-color: black;
+  position: absolute;
+  left: 49.5%;
+  top: 13%;
+  transform-origin: 50% 100%;
+  /* transform: rotate( calc( var(--rotateTo) * 1deg) ); */
+
+}
+
+.second {
+  height: 60px;
+  width: 2px;
+  background-color: rgb(69, 51, 78);
+  position: absolute;
+  left: 49.7%;
+  top: 10%;
+  transform-origin: 50% 100%;  
+  z-index: -1;
+}
