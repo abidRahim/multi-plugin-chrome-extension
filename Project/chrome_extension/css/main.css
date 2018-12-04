@@ -45,7 +45,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
 }
 
 .hour {
@@ -104,7 +104,7 @@
 
 h1{
   font-family: sans-serif;
-  color: rgb(243, 152, 152);
+  color: rgb(250, 83, 83);
   font-size: 60px;
   padding: 20px;
   margin: 0;
@@ -148,7 +148,7 @@ li{
   margin: 0 auto;
   text-align: center;
   padding : 30px;
-  background-color: rgba(238, 237, 237, 0.144);
+  background-color: rgba(238, 237, 237, 0.363);
 }
 
 .one_input_submit{
@@ -171,4 +171,7 @@ li{
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+.todo{
+  padding: 25px;
 }

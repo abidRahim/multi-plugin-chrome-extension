@@ -22,6 +22,27 @@ function randomize(arr) {
 }
 
 
+
+// change background:
+
+var changeBackground = (function() {
+
+  var colour = 0;
+  var colours = ['', './img/0.jpg','./img/1.jpg','./img/2.jpg','./img/3.jpg', './img/4.jpg', 'green', 'light'];
+
+  return function() {
+    colour = (colour+1) % colours.length ;
+    document.body.style.backgroundImage =  `url(${colours[colour]})`;
+    console.log(colour);
+
+  };
+
+}());
+
+window.setInterval( changeBackground, 5000);
+
+
+
 // document.addEventListener('click', backgroundHandler);
 
 

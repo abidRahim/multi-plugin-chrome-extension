@@ -37,12 +37,10 @@ function addlist() {
     arr1.push(obj);
     document.getElementById('input').value = "";
 
-    
     displayX();
 
     localStorage.arr1 = JSON.stringify(arr1);
 }
-
 
 
 
