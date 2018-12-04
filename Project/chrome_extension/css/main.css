@@ -10,6 +10,10 @@ body {
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+p {
+  margin: 2px 0;
+}
+
 .back {
   background-image: var(--change);
   background-size: cover;
@@ -17,20 +21,37 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  justify-content: space-between;  
   height: 100vh;
+  grid-auto-flow: column;
+}
+
+.grid1 {
+  display: grid;
+  width: 500px;
+}
+
+.grid2 {
+  display: grid;
+  width: 500px;
 }
 
 /* Browser Clock */
 
+.item {
+
+}
+
 .item1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 200px 100px;
   grid-template-rows: 250px;
   grid-template-areas: 
-    "clock other"
-    "another other";  
-  place-items: center;
+  "clock other"
+  "another other";  
+  justify-items: space-around;
+  align-items: center;
+  padding-left: 30px;
 }
 
 .clock {
@@ -46,11 +67,12 @@ body {
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50.5%;
   transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .hour {
@@ -86,6 +108,19 @@ body {
   z-index: -1;
 }
 
+.item2 {
+  align-self: space-around;
+}
+.digiClock {
+  color: white;  
+}
+
+.dateString {
+
+}
+
+/* Quote Generator */
+
 .quote-generator {
   width: 400px;
 }
@@ -97,8 +132,7 @@ body {
   border: 0.5px solid rgba(204, 204, 204, 0.356);
   border-radius: 4px;
   padding: 10px 0;
-  filter: blur(30%);
-  background-color: rgba(53, 53, 53, 0.37);
+  background-color: rgba(53, 53, 53, 0.527);
   width: 500px; 
 }
 
@@ -107,7 +141,6 @@ blockquote {
   padding-left: 15px;
   color: white;
   font-size: 1.2em;
-
 }
 
 cite {
@@ -154,7 +187,7 @@ h1.todo-heading {
 .todo-container {
   background-color: #ffffff;
   box-shadow:0 1px 6px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 5px;  
 }
 
 #user-input {
@@ -181,6 +214,12 @@ input::placeholder {
 ul {
   list-style-type: none;
 }
+
+#addList {
+  max-height: 200px;
+  overflow: auto;
+}
+
 
 label {
   color: #4d4d4d;
@@ -301,4 +340,3 @@ input[type=checkbox]:checked:after {
 .clear:hover {
   text-decoration: underline;
 }
-

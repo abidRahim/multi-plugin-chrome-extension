@@ -6,8 +6,7 @@ var numbers = [1,2,3,4,5,6,7,8,9,10,11,12];
 function backgroundHandler() {
   var num = Math.floor(Math.random() *12);
 
-  root.style.setProperty("--change", "url('../img/" + num + ".jpg')");  
-  console.log(num);  
+  root.style.setProperty("--change", "url('../img/" + num + ".jpg')");    
 }
 
 setInterval(backgroundHandler, 60000);
@@ -64,6 +63,48 @@ var second = document.querySelector(".second");
     setInterval( secStick, 1000);
     setInterval( minStick , 60000);
     setInterval( hourStick, 3600000);
+
+
+// Browser Clock -- Digitial
+
+let digiClock = document.getElementById('clockDisplay');
+
+function displayTime() {
+  let date = new Date();
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let second = date.getSeconds();
+  let dateString = date.toDateString();
+
+  let meridiem = "AM";
+
+  if (hour == 12) {
+    meridiem = "PM";
+  }
+  
+  if (hour > 12 ) {
+    hour = hour - 12;
+    meridiem = "PM";
+  }
+
+  if (hour == 0) {
+    hour = 12;
+    meridiem = "AM";
+  }
+
+  hour = (hour < 10) ? "0" + hour : hour;
+  minute = (minute < 10) ? "0" + minute : minute;
+  second = (second < 10) ? "0" + second : second;
+  
+  let time = hour + ":" + minute + ":" + second + " " + meridiem;
+  
+  digiClock.innerHTML = `<p class="time">${time}</p> <br> <p class="dateString">${dateString}</p>`;
+
+  setTimeout(displayTime, 1000);
+}
+
+displayTime();
+
 
 // Quote Generator
 
