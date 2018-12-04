@@ -139,7 +139,10 @@ li{
   margin: 0 auto;
   text-align: center;
   font-family: sans-serif;
+  padding: 20px;
+  font-size: 22px;
 }
+
 .main_container{
   width: 500px;
   margin: 0 auto;
@@ -147,10 +150,7 @@ li{
   padding : 30px;
   background-color: rgba(238, 237, 237, 0.144);
 }
-.item_list{
-  padding: 20px;
-  font-size: 22px;
-}
+
 .one_input_submit{
   background-color: rgb(218, 180, 169);
   border: none;
