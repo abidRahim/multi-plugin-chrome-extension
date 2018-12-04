@@ -314,7 +314,32 @@ function removeSelectedAll() {
 
 }
 
-toggleSelect.addEventListener("click", selectAllList);
+function editBookList(e) {
+  if (e.target.localName != "label") return;
+
+  const id = e.target.dataset.id;
+  const parent = e.target.parentNode;
+  var labelNode = e.target;
+  const listInput = document.createElement('input');
+  listInput.type = 'text';
+  listInput.classList.add('input-text');
+  var editArr = arr.filter( v => (id == v.id) );
+  listInput.value = editArr[0].todo;
+  parent.replaceChild(listInput, labelNode);
+  listInput.focus();
+  listInput.addEventListener('blur', (e) => {
+    editArr[0].todo = e.target.value;
+    displayTodo(arr);
+
+    parent.replaceChild(labelNode, listInput);
+  });
+  listInput.addEventListener("keyup", (e) => {
+    if(e.keyCode == 13) {
+      editArr[0].todo = e.target.value;
+      displayTodo(arr)
+    }
+  });
+}
 
 
 // Event Listeners
@@ -323,7 +348,7 @@ input.addEventListener("keydown", addTodo);   // When "Enter" key is pressed, it
 add.addEventListener("click", handleList);    // Marks the list.
 add.addEventListener("click", deleteTodo);    // Deletes the list on clicking the close icon.
 toggleSelect.addEventListener("click", selectAllList);
-
+add.addEventListener("dblclick", editBookList);
 
 // Event Listener for State "All"
 all.addEventListener("click", () => {
